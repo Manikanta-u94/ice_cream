@@ -2144,8 +2144,10 @@ a:hover {
 .ck_footer_left_section1 p{
 	color:#fff;
 	text-transform: uppercase;
-    padding-left: 80px;
-    padding-bottom: 10px;
+    padding-left: 25px;
+    padding-bottom: 2px;
+    /* padding-left: 80px; */
+    /* padding-bottom: 10px; */
 }
 .ck_footer_right_section ul{
 	float:right;
