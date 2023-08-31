@@ -54,6 +54,24 @@
   }
 }
 
+@media (max-width: 480px) {
+  .email_mobile {
+    display: block;
+  }
+  .email_desktop{
+	  display: none;
+  }
+}
+
+@media (min-width: 481px) {
+ .email_mobile {
+    display: none;
+  }
+  .email_desktop{
+	  display: block;
+  }
+}
+
 </style>
 </head>
 <body class="demo-3">
@@ -835,19 +853,21 @@ Party</h3>
 </div>
 <div class="contact_details"> <span>Hyderabad District, Telangana 500016</span>
 </div>
-<div class="contact_heading"> <span>Email:</span>
+<!-- <div class="contact_heading"> <span>Email:</span>
 </div>
 <div class="contact_details"> <span>business.arivaartisan@gmail.com</span>
-</div>
+</div> -->
 </div>
 
 
 <div class="contact_details_content">
-<div class="contact_heading"> 
-<span>Phone:</span>
+<div class="contact_heading"> <span>Email:</span>
+<br><span>Phone:</span>
 </div>
-<!-- <div class="contact_details"> <span>business.arivaartisan@gmail.com</a></span>
-</div> -->
+<div class="contact_details email_desktop"> <span>business.arivaartisan@gmail.com</span>
+</div>
+<div class="contact_details email_mobile"> <span>business.arivaartisan<br>@gmail.com</span>
+</div>
 <div class="contact_heading"> <span></span>
 </div>
 <div class="contact_details"> <span class="pd_left"><a href="#">+91-9000245817</a></span>
