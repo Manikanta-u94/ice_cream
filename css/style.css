@@ -2132,7 +2132,7 @@ a:hover {
 .ck_footer_left_section{
 	float:left;
 	width:50%;
-	    padding-left: 80px;
+	padding-left: 80px;
     padding-bottom: 50px;
 }
 .ck_footer_right_section{
@@ -2141,9 +2141,11 @@ a:hover {
 	 padding-right: 20px;
     padding-bottom: 50px;
 }
-.ck_footer_left_section p{
+.ck_footer_left_section1 p{
 	color:#fff;
 	text-transform: uppercase;
+    padding-left: 80px;
+    padding-bottom: 10px;
 }
 .ck_footer_right_section ul{
 	float:right;

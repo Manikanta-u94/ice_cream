@@ -758,7 +758,7 @@ Party</h3>
 							<div class="form-pos contect_form1">
 								<div class="form-group i-name">
 
-									<input type="text" class="form-control require" name="fname" required placeholder="Name*">
+									<input type="text" class="form-control require" name="fname" required="" placeholder="Name*">
 
 								</div>
 							</div>
@@ -766,8 +766,7 @@ Party</h3>
 						<div class="col-lg-6 col-md-6">
 							<div class="form-pos contect_form1">
 								<div class="form-group i-email">
-
-									<input type="email" class="form-control require" name="email" placeholder=" Email *" data-valid="email" data-error="Email should be valid." required>
+									<input type="email" class="form-control require" name="email" required="" placeholder=" Email *" data-valid="email" data-error="Email should be valid.">
 
 								</div>
 							</div>
@@ -776,7 +775,7 @@ Party</h3>
 						<div class="col-lg-6 col-md-6">
 							<div class="form-e">
 								<div class="form-group i-phone contect_form1">
-									<input type="text" class="form-control require" name="phone" placeholder=" Phone No.*" data-valid="phone" data-error="Phone number should be valid." required>
+									<input type="text" class="form-control require" name="phone" required="" placeholder=" Phone No.*" data-valid="phone" data-error="Phone number should be valid.">
 
 								</div>
 							</div>
@@ -786,7 +785,7 @@ Party</h3>
 							<div class="form-s">
 								<div class="form-group i-subject contect_form1">
 
-									<input type="text" class="form-control require" name="subject" placeholder="subject" required>
+									<input type="text" class="form-control require" name="subject" required="" placeholder="subject">
 
 								</div>
 							</div>
@@ -795,7 +794,8 @@ Party</h3>
 						<div class="col-md-12">
 							<div class="form-m">
 								<div class="form-group i-message contect_form1">
-									<textarea class="form-control require" name="message" required rows="5" id="messageTen" placeholder=" Message"></textarea>
+
+									<textarea class="form-control require" name="message" required="" rows="5" id="messageTen" placeholder=" Message"></textarea>
 
 								</div>
 							</div>
@@ -807,15 +807,10 @@ Party</h3>
 							<div class="tb_es_btn_div">
 								<div class="response"></div>
 								<div class="tb_es_btn_wrapper conatct_btn2 cont_bnt" id="send_msg">
-									<button type="submit" id="btn" class="btn btn-primary">send message !</button>
+									<button type="submit" class="submitForm" id="btn">send message !</button>
 								</div>
 							</div>
 						</div>
-						<style>
-							.ck_contact_inner_heading_wrapper h3:after {
-								border: 2px solid #ffffff;
-							}
-						</style>
 					</div>
 				</form>
 			</div>
@@ -945,7 +940,7 @@ Party</h3>
 
 <div class="ck_footer_main_wrapper float_left">
 <div class="container-fluid">
-<div class="ck_footer_left_section">
+<div class="ck_footer_left_section1">
 <p id="copyrightYear">&copy;></p>
 </div>
 <script>
@@ -1032,9 +1027,7 @@ Join us in this culinary adventure as we continue to reinvent frozen delights. E
 <script src="js/thanks.js"></script>
 
 <script>
-	// var btn = document.getElementById('btn');
 	function contactFunction(){
-		// debugger;
 		var fname = document.getElementsByName('fname')[0].value;
 		var email = document.getElementsByName('email')[0].value;
 		var phone = document.getElementsByName('phone')[0].value;
@@ -1042,34 +1035,35 @@ Join us in this culinary adventure as we continue to reinvent frozen delights. E
 		var subject = document.getElementsByName('subject')[0].value;
 		document.getElementById("btn").disabled = true;
 		Email.send({
-			SecureToken : "7c3f1860-fff2-47bf-9135-ad29d529fa0c",
-			To : 'mani.webdevloper@gmail.com',
-			From : "mani.webdevloper@gmail.com",
+			SecureToken : "f96af8fa-6616-4832-880b-951101ecfb2e",
+			To : 'business.arivaartisan@gmail.com',
+			From : "business.arivaartisan@gmail.com",
 			Subject : "Enquiry Form",
 			Body : email_string(fname,email,phone,subject,message)
 		}).then(
 			message => 
-			send_response(email)		
+			send_response(email)
+			
 	);
-	return false
+	return false;
 	}
 	
 	function send_response(email){
 	var fname = document.getElementsByName('fname')[0].value;
 	Email.send({
-			SecureToken : "7c3f1860-fff2-47bf-9135-ad29d529fa0c",
+			SecureToken : "f96af8fa-6616-4832-880b-951101ecfb2e",
 			To : email,
-			From : "mani.webdevloper@gmail.com",
+			From : "business.arivaartisan@gmail.com",
 			Subject : "Thank You for Reaching Out to Us!",
 			Body : thanks_body(fname)
 		}).then(
-		message => thank_you(message)		
+		message => thank_you_alert(message)
+		// swal("Successful!", "Thank you for contacting Us!", "success");
 		)
 	}
-	
-	function thank_you(msg){
-		document.getElementById("contact_form")[0].reset();
-		swal("Successful!", "Thank you for contacting Us!", "success");
+	function thank_you_alert(msg){
+		document.getElementById("contact_form").reset();
+		swal("Successful!", "Thank you for contacting Us!", "success");	
 	}
 </script>
 
